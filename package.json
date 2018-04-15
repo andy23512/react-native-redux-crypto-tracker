@@ -5,15 +5,22 @@
   "devDependencies": {
     "jest-expo": "26.0.0",
     "react-native-scripts": "1.13.1",
-    "react-test-renderer": "16.3.0-alpha.1"
+    "react-test-renderer": "16.3.0-alpha.1",
+    "remote-redux-devtools": "^0.5.12",
+    "remotedev-rn-debugger": "^0.8.3"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
+    "postinstall": "remotedev-debugger --hostname localhost --port 5678 --injectserver",
     "start": "react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest"
+  },
+  "remotedev": {
+    "hostname": "localhost",
+    "port": 5678
   },
   "jest": {
     "preset": "jest-expo"
